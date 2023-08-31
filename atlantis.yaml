@@ -6,17 +6,17 @@ projects:
   name: test
 - dir: test1
   name: test1
-#  workflow: dev
+  workflow: dev
   
 - dir: test3
   name: test3
-#  workflow: dev
+  workflow: dev
 
-# workflows:
-#    dev:
-#     plan:
-#       steps:
-#       - run: |
-#           bash ../create_backend.sh ./
-#       - init
-#       - plan
+workflows:
+   dev:
+    plan:
+      steps:
+      - run: |
+          bash ../create_backend.sh ./
+      - init
+      - plan
