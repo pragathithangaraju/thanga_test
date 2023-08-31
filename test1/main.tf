@@ -6,6 +6,6 @@ versioning {
    }
 tags = {
      Name = "Bucket2"
-     env= "staging12"
+     env= "staging123"
       }
 }
