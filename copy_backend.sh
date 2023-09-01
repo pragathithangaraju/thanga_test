@@ -1,6 +1,5 @@
 
 script_path=$(dirname $0)
-
 env=$1
 aws_region=$2
 
