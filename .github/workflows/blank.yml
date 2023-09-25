@@ -9,7 +9,8 @@ on:
     branches: [ "example" ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
+permissions:
+  contents: write
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -30,5 +31,12 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo Add other actions to build >./output.txt
+          echo test, and deploy your project>./output2.txt
+      - name: push it  
+        run: |
+         git config --global user.name "github-actions[bot]"
+         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+         git add -A
+         git commit -m "Update output"
+         git push
