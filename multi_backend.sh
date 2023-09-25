@@ -12,6 +12,8 @@ while read i; do
 
         mkdir -p ${tgt_dir}/${i}
         source ${tgt_dir}/${env}.conf
+       # cat ${tgt_dir}/${env}.tmpl >  "${tgt_dir}/${i}/templCp.tf"
+        exit 1
         # cp {}  
         cat <<EOF>"${tgt_dir}/${i}/main.tf"
 data "terraform_remote_state" "pipeline1" {
